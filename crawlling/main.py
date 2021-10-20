@@ -82,16 +82,58 @@ for e in maker:
                                         time.sleep(3)
                                         month = driver.find_element_by_xpath(
                                             '/html/body/div[2]/section/article[4]/form/div/div[1]/div/div/select')
-                                        # print(month.text)
+                                        print(month.text)
+
                                         month = month.text.split('\n')
-                                        # print(month)
-                                        if month[3]:
+                                        print(month)
+
+                                        if month[2]:
+                                            print(month[2])
+                                            month_36 = driver.find_element_by_xpath('//*[@id="PERD_CD"]/option[3]')
+                                            month_36.click()
+                                            time.sleep(3)
                                             adpay = driver.find_elements_by_css_selector('#PAYPRO_text')
                                             # print(adpay[0].text)
                                             adpay = driver.find_element_by_xpath('//*[@id="PAYPRO_text"]/option[1]')
                                             adpay.click()
                                             time.sleep(3)
-                                            print(adpay.text)
+                                            # print(adpay.text)
+
+                                            # adpay = adpay.text.split('\n')
+                                            # print(adpay)  # 선수금
+                                            if adpay.text.__contains__("0%"):
+                                                print("타냐?")
+                                                deposit = driver.find_element_by_xpath('//*[@id="DEPPRO_text"]')
+                                                # print(deposit.text) # 보증금
+                                                deposit = deposit.text.split('\n')
+                                                # print(deposit[0])
+                                                residual = driver.find_element_by_xpath(
+                                                    '//*[@id="REPRT_AMT"]/option[2]')  # 최대잔가 고정 리스트 출력이 안됨.
+                                                # print(residual.text)  # 잔존가치
+                                                dits = driver.find_element_by_xpath(
+                                                    '//*[@id="STIP_DST_CD"]/option[1]')  # 2만키로 고정 리스트 출력이 안됨.
+                                                # print(dits.text)
+                                                city = driver.find_element_by_xpath('//*[@id="PBDBT_CITY_CD"]')
+                                                # print(city.text)
+                                                merits = driver.find_element_by_xpath(
+                                                    '//*[@id="e2_list"]/tr[1]/td[1]/label')
+                                                print(merits.text)
+                                                monthly_pay = driver.find_element_by_xpath(
+                                                    '//*[@id="e2_list"]/tr[1]/td[2]')
+                                                print(monthly_pay.text)
+
+
+                                        if month[3]:
+                                            print(month[3])
+                                            month_48 = driver.find_element_by_xpath('//*[@id="PERD_CD"]/option[4]')
+                                            month_48.click()
+                                            time.sleep(3)
+                                            adpay = driver.find_elements_by_css_selector('#PAYPRO_text')
+                                            # print(adpay[0].text)
+                                            adpay = driver.find_element_by_xpath('//*[@id="PAYPRO_text"]/option[1]')
+                                            adpay.click()
+                                            time.sleep(3)
+                                            # print(adpay.text)
 
                                             # adpay = adpay.text.split('\n')
                                             # print(adpay)  # 선수금
