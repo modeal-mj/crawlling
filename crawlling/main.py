@@ -129,7 +129,7 @@ for e in maker:
                                                 # print(monthly_pay.text)
                                                 # print(e, n, l, f, m, month[2], adpay[1],  deposit[1], residual.text, dits.text, city.text, merits.text, monthly_pay.text)
                                                 data_list = [e, n, l, f, m, month[2], adpay[1],  deposit[1], residual.text, dits.text, city.text, merits.text, monthly_pay.text, " ", " ", " ", " ", " ", " ", " ", " "]
-                                                dbconfig.insert_sql(data_list)
+                                                dbconfig.insert_sql(data_list) # 깃허브 테스트1
 
                                         if month[3]:
                                             print(month[3])
